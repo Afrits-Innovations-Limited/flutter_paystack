@@ -43,10 +43,12 @@ class AccentButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var kPrimaryColor = HexColor('#F76E06');
+
     return _BaseButton(
       onPressed: onPressed,
       showProgress: showProgress,
-      color: Theme.of(context).accentColor,
+      color: kPrimaryColor,
       borderSide: BorderSide.none,
       textStyle: const TextStyle(
           fontSize: 14.0, color: Colors.white, fontWeight: FontWeight.bold),
@@ -78,7 +80,7 @@ class _BaseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const borderRadius = const BorderRadius.all(Radius.circular(5.0));
+    const borderRadius = const BorderRadius.all(Radius.circular(25.0));
     var textWidget;
     if (text != null) {
       textWidget = new Text(
@@ -127,5 +129,17 @@ class _BaseButton extends StatelessWidget {
                           ],
                         )),
         ));
+  }
+}
+
+class HexColor extends Color {
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
+
+  static int _getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll('#', '');
+    if (hexColor.length == 6) {
+      hexColor = 'FF' + hexColor;
+    }
+    return int.parse(hexColor, radix: 16);
   }
 }

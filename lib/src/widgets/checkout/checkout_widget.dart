@@ -98,12 +98,14 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(Icons.lock, size: 10),
-            Padding(
-              padding: EdgeInsetsDirectional.only(start: 3),
-              child: Text(
-                "Secured by",
-                key: Key("SecuredBy"),
-                style: TextStyle(fontSize: 10),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(start: 3),
+                child: Text(
+                  "We do not store your card details. We simply pass it to your bank for processing.",
+                  key: Key("SecuredBy"),
+                  style: TextStyle(fontSize: 10),
+                ),
               ),
             )
           ],
@@ -120,15 +122,20 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
                   'assets/images/paystack_icon.png',
                   key: Key("PaystackBottomIcon"),
                   package: 'flutter_paystack',
-                  height: 16,
+                  width: 150,
+                  height: 150,
                 ),
               ),
+
+            /*
             Image.asset(
               'assets/images/paystack.png',
               key: Key("PaystackLogo"),
               package: 'flutter_paystack',
               height: 15,
             )
+
+            */
           ],
         )
       ],
