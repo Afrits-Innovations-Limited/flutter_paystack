@@ -3,7 +3,6 @@ import 'package:flutter_paystack/src/api/service/contracts/cards_service_contrac
 import 'package:flutter_paystack/src/common/exceptions.dart';
 import 'package:flutter_paystack/src/common/my_strings.dart';
 import 'package:flutter_paystack/src/common/paystack.dart';
-import 'package:flutter_paystack/src/common/utils.dart';
 import 'package:flutter_paystack/src/models/card.dart';
 import 'package:flutter_paystack/src/models/charge.dart';
 import 'package:flutter_paystack/src/models/checkout_response.dart';
@@ -44,8 +43,8 @@ class _CardCheckoutState extends BaseCheckoutMethodState<CardCheckout> {
 
   @override
   Widget buildAnimatedChild() {
-    var amountText =
-        _charge.amount.isNegative ? '' : Utils.formatAmount(_charge.amount);
+    //var amountText =
+    // _charge.amount.isNegative ? '' : Utils.formatAmount(_charge.amount);
 
     return new Container(
       alignment: Alignment.center,

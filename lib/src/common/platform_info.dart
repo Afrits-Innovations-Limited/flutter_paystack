@@ -9,6 +9,7 @@ class PlatformInfo {
   final String deviceId;
 
   static Future<PlatformInfo> fromMethodChannel(MethodChannel channel) async {
+    // ignore: todo
     // TODO: Update for every new versions.
     //  And there should a better way to fucking do this
     final pluginVersion = "1.0.5";
@@ -27,7 +28,7 @@ class PlatformInfo {
     required String userAgent,
     required String paystackBuild,
     required String deviceId,
-  })   : userAgent = userAgent,
+  })  : userAgent = userAgent,
         paystackBuild = paystackBuild,
         deviceId = deviceId;
 
